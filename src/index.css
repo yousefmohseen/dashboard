@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import "tailwindcss";
+@layer components{
+    /*global*/
+    .h1{
+        margin-bottom: 24px;
+        font-size: 28px;
+        font-weight: 700;
+        color: black;
+    }
+    .btn{
+        width:124px;
+        height:34px;
+        text-align:center;
+        font-size: 12px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    .input{
+        display: block;
+        width:100%;
+        height:40px;
+        margin-bottom: 16px;
+        padding-left: 16px;
+        background-color:var(--color-praim2) ;
+        outline: none;
+        border: 1px solid var(--color-praim5);
+        border-radius: 6px;
+    }
+    .active{
+        background-color:var(--color-praim3);
+        color: white;
+    }
+    /*sign in & sign up*/
+    .bg1{
+        width: 100vw;
+        height: 100vh;
+        background-color:var(--color-praim3);
+        background-size: 100% 100%;
+        background-image:url("../dashboard/src/assets/image/bg.png") ;
+        text-align: center;
+        color: var(--color-praim1);
+        .bg2{
+            max-width:498px ;
+            padding: 12px 33px;
+            background-color: white;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            border-radius: 20px;
+            @apply max-tab-min:w-[87%]  max-tab-min:h-[80%] max-mob:p-2.5;
+        }
+        
+    }
+
+    /*side-nav bar */
+    .side-nav{
+        @apply 
+            fixed bg-white h-screen w-[24%] pt-[16px] pb-[63px] z-1
+            flex flex-col justify-between items-center
+            max-tab-min:w-[29%]
+            max-mob:w-[36%]
+        ;
+    }
+    .side-nav li{
+        @apply 
+            relative h-10 pt-2 pb-2 
+        ;
+    }
+    .navitem{
+        @apply 
+            h-full p-2 pl-5 pr-10 rounded-[6px]
+            max-tab-min:p-2
+        ;
+    }
+}
+@theme{
+    --font-NunitoSans:"Nunito Sans", sans-serif;
+    --color-praim1:#202224;
+    --color-praim2:#f1f4f9;
+    --color-praim3:#4880FF;
+    --color-praim4:#F8F8FF;
+    --color-praim5:#d8d8d8; 
+    --color-praim6:#404040;
+    --color-praim7:#565656;
+    --color-praim8:#F5F6FA;
+    --color-praim9:#EF3826;
+    --color-black-opc:#00000080; 
+    --breakpoint-mob: 480px;   
+    --breakpoint-tab-min: 768px;
+    --breakpoint-tab: 992px;
+    --breakpoint-lap: 1367px;
+}
+
+
