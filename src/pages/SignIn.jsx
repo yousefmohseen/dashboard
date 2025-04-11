@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
+import bg from "../assets/image/bg.png"
 
 const SignIn = () => {
   const [signinbtn, setSigninbtn] = useState(true)
@@ -42,7 +43,9 @@ const SignIn = () => {
   }
   return (
     <div className="bg1">
-      <div className="bg2 h-[95%]">
+      <div className="bg-praim3 size-full fixed"></div>
+      <img className="size-full fixed" src={bg} alt="" />
+      <div className="bg2 h-[95%] [@media(min-height:790px)]:max-h-[-webkit-fill-available]">
         <h1 className="text-[32px] font-bold">Sign In</h1>
         <p className="mb-[35px] [@media(max-height:476px)]:mb-2">Please enter your email and password to continue</p>
         <form className="flex flex-col justify-between gap-1 h-[74%] max-w-[433px] max-mob:h-[70%] [@media(max-height:476px)]:h-fit [@media(max-height:480px)]:flex-row [@media(max-height:476px)]:items-center" onSubmit={sData}>

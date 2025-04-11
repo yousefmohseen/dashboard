@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import uploadimg from "../assets/image/upload.png"
 import axios from "axios"
+import bg from "../assets/image/bg.png"
 
 const SignUp = () => {
   const [signupbtn, setSignupbtn] = useState(true)
@@ -56,11 +57,13 @@ const SignUp = () => {
       })
   }
   return (
-    <div className="bg1 [@media(max-height:476px)]:h-auto">
-      <div className="bg2 h-[99.5%] [@media(max-height:476px)]:static [@media(max-height:476px)]:transform-none [@media(max-height:476px)]:ml-auto [@media(max-height:476px)]:mr-auto">
+    <div className="bg1 [@media(max-height:485px)]:h-auto">
+      <div className="bg-praim3 size-full fixed"></div>
+      <img className="size-full fixed" src={bg} alt="" />
+      <div className="bg2 h-[99.5%] [@media(max-height:485px)]:h-auto [@media(max-height:485px)]:translate-y-0 [@media(max-height:485px)]:top-0">
         <h1 className="text-[32px] font-bold">Sign Up</h1>
         <p className="mb-3">Create a account to continue</p>
-        <form className="text-left max-w-[433px] **:[&_input]:mb-2" onSubmit={sData}>
+        <form className="text-left max-w-[433px] **:[&_input]:mb-2 [@media(max-height:495px)]:**:[&_input]:mb-1" onSubmit={sData}>
           <div className="flex gap-[18px]">
             <div>
               <label className="block" htmlFor="fName">First Name </label>
@@ -129,9 +132,9 @@ const SignUp = () => {
           </div>
           <div>
             <label htmlFor="proImg">
-              <p className="block">Profile Image</p>
+              <p className="block [@media(max-height:528px)]:inline">Profile Image </p>
               <img
-                className="inline-block size-[100px] p-[30px] mb-[16px] bg-praim4 border border-dashed border-praim3 cursor-pointer"
+                className="inline-block size-[100px] p-[30px] mb-4 bg-praim4 border border-dashed border-praim3 cursor-pointer [@media(max-height:528px)]:mb-2 "
                 src={uploadimg} alt=""
               />
             </label>
@@ -148,18 +151,20 @@ const SignUp = () => {
             <span>{imgName}</span>
           </div>
           <div>
+            <div>
               <input
                 className={signupbtn ? "block btn input active" : "hidden"}
                 type="submit"
                 value="Sign Up"
               />
               <span className={!signupbtn ? "block" : "hidden"}>
-              Loading  <i className="fas fa-spinner fa-pulse"></i>
+                Loading  <i className="fas fa-spinner fa-pulse"></i>
               </span>
             </div>
-          <div className="text-center">
-            <p className="inline">Already have an account? </p>
-            <Link className="inline text-praim3 underline" to="/dashboard">Sign In</Link>
+            <div className="text-center">
+              <p className="inline">Already have an account? </p>
+              <Link className="inline text-praim3 underline" to="/dashboard">Sign In</Link>
+            </div>
           </div>
         </form>
       </div>
